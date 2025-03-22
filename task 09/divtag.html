@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Board</title>
+  <h1>Hello guys</h1>
+  
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #35628e;
+    }
+    .ludo-board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 2px;
+      background-color: #000;
+    }
+    .section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgray;
+    }
+    .red { background-color: red; }
+    .blue { background-color: blue; }
+    .yellow { background-color: yellow; }
+    .green { background-color: green; }
+    .center { background-color: white; }
+  </style>
+  
+</head>
+
+<body>
+    
+  <div class="ludo-board">
+    <div class="section red">
+        <h1>Class 1</h1>
+    </div>
+    <div class="section center"></div>
+    <div class="section blue">
+        <h2>Class2</h2>
+    </div>
+    <div class="section center"></div>
+    <div class="section center"></div>
+    <div class="section center"></div>
+    <div class="section yellow">
+        <h2>Class 3</h2>
+    </div>
+    <div class="section center"></div>
+    <div class="section green">
+        <h1>class 4</h1>
+    </div>
+  </div>
+</body>
+</html>

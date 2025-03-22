@@ -1,0 +1,54 @@
+img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    vertical-align: middle;
+    
+}
+
+.wrapper {
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+
+}
+.intro {
+    flex: 1;
+}
+body{
+    background-color: rgb(111, 25, 47);
+}
+h1
+{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+img{border: 10px;}
+img{
+    border: double red;
+    border-radius: 50%;
+}
+
+#paral{
+    text-align: center;
+    color:red;
+}
+.center{
+    text-align: center;
+    color:red;
+}
+h1::first-line{
+    color:aqua
+    
+}
+p ::first-line{
+color:blue;
+font-variant: small-caps;
+}
+
+a:link{
+    color: green;
+}
+a :visited{color:red}
+a :hover{color: palevioletred;}
+a :active{color:black}

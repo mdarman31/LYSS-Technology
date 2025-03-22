@@ -1,0 +1,21 @@
+img{
+    border: double rgb(44, 13, 136);
+    border-radius: 50%;
+}
+h1{
+    color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(212, 160, 38);
+}
+p{
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(6, 36, 3);
+}
+div{
+    color:aliceblue;
+    font-family: sans-serif;
+    font-size: medium;
+}
