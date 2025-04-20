@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Mini Programs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #900;
+      border-bottom: 2px solid #900;
+      padding-bottom: 5px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 8px;
+      margin-top: 8px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #900;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #700;
+    }
+
+    .output {
+      margin-top: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Program 1 -->
+  <div class="box">
+    <h2>1. Print Name and Address</h2>
+    <button onclick="printNameAddress()">Show Info</button>
+    <div class="output" id="output1"></div>
+  </div>
+
+  <!-- Program 2 -->
+  <div class="box">
+    <h2>2. Check Value and Data Type</h2>
+    <input type="text" id="val1" placeholder="Enter first value">
+    <input type="text" id="val2" placeholder="Enter second value">
+    <button onclick="checkEquality()">Check</button>
+    <div class="output" id="output2"></div>
+  </div>
+
+  
+  <div class="box">
+    <h2>3. Add Two Strings & Convert to Uppercase</h2>
+    <input type="text" id="str1" placeholder="Enter first string">
+    <input type="text" id="str2" placeholder="Enter second string">
+    <button onclick="combineStrings()">Combine</button>
+    <div class="output" id="output3"></div>
+  </div>
+
+  
+  <div class="box">
+    <h2>4. Convert String Length to Bytes</h2>
+    <input type="text" id="stringInput" placeholder="Enter string">
+    <button onclick="stringToBytes()">Convert</button>
+    <div class="output" id="output4"></div>
+  </div>
+
+  
+  <div class="box">
+    <h2>5. Round a Number to Digits</h2>
+    <input type="number" id="numberInput" placeholder="Enter number">
+    <input type="number" id="digitInput" placeholder="Decimal places (e.g., 2)">
+    <button onclick="roundNumber()">Round</button>
+    <div class="output" id="output5"></div>
+  </div>
+
+  
+  <script>
+    
+    function printNameAddress() {
+      let name = "Md Arman";
+      let address = "11, Phulwari Sharif, Patna, India";
+      document.getElementById("output1").innerText = `Name: ${name}\nAddress: ${address}`;
+    }
+
+    
+    function checkEquality() {
+      let val1 = document.getElementById("val1").value;
+      let val2 = document.getElementById("val2").value;
+      let type1 = typeof eval(val1);
+      let type2 = typeof eval(val2);
+      let result = (val1 === val2 && type1 === type2) ? 
+        "Both value and data type are same." : 
+        "Value or data type do not match.";
+      document.getElementById("output2").innerText = result;
+    }
+
+    
+    function combineStrings() {
+      let str1 = document.getElementById("str1").value;
+      let str2 = document.getElementById("str2").value;
+      let combined = (str1 + str2).toUpperCase();
+      document.getElementById("output3").innerText = combined;
+    }
+
+    
+    function stringToBytes() {
+      let str = document.getElementById("stringInput").value;
+      let bytes = new TextEncoder().encode(str).length;
+      document.getElementById("output4").innerText = `Byte length: ${bytes}`;
+    }
+
+    
+    function roundNumber() {
+      let num = parseFloat(document.getElementById("numberInput").value);
+      let digits = parseInt(document.getElementById("digitInput").value);
+      let rounded = num.toFixed(digits);
+      document.getElementById("output5").innerText = `Rounded Number: ${rounded}`;
+    }
+  </script>
+
+</body>
+</html>
