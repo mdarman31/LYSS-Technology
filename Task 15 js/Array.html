@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 15</title>
+</head>
+<body style="background-color: blueviolet;">
+    <h3>Here Are All 3 task 
+
+    </h3>
+    <P><li>1. Write a program to sort a JavaScript Array.<li><p>
+
+       <p><li>2. Write a program to concatenate two array elements and store them in new array.<li><p>
+        
+       <p><li>3. Write a program to remove first element from JavaScript Array.</li></P>
+        <h2> View page source and cheak My All Tasks there</h2>
+    <script>
+
+        // 1. Sort a JavaScript Array
+function sortArray(arr) {
+  return arr.sort((a, b) => a - b); // For numbers (ascending)
+  // For strings: return arr.sort();
+}
+
+// 2. Concatenate two arrays
+function concatArrays(arr1, arr2) {
+  return [...arr1, ...arr2]; // Using spread operator
+  // Alternative: return arr1.concat(arr2);
+}
+
+// 3. Remove first element from array
+function removeFirstElement(arr) {
+  return arr.slice(1); // Returns new array without first element
+  // Alternative: arr.shift(); return arr; (modifies original)
+}
+
+// Test cases
+const numbers = [3, 1, 4, 2];
+const fruits = ['apple', 'banana'];
+const colors = ['red', 'blue'];
+
+console.log(sortArray(numbers)); // [1, 2, 3, 4]
+console.log(concatArrays(fruits, colors)); // ['apple', 'banana', 'red', 'blue']
+console.log(removeFirstElement(fruits)); // ['banana']
+    </script>
+    
+</body>
+</html>
