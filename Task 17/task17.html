@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Exception Handling Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    .example {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #2196F3;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #1976D2;
+    }
+    .output {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Exception Handling Examples</h1>
+
+  <!-- Example 1: Undeclared Variable -->
+  <div class="example">
+    <h2>1. Undeclared Variable Error</h2>
+    <button onclick="undeclaredVariable()">Run</button>
+    <div id="output1" class="output"></div>
+  </div>
+
+  <!-- Example 2: Divide by Zero -->
+  <div class="example">
+    <h2>2. Divide by Zero Error</h2>
+    <button onclick="divideByZero(10, 0)">Run</button>
+    <div id="output2" class="output"></div>
+  </div>
+
+  <!-- Example 3: Array Index Out of Bound -->
+  <div class="example">
+    <h2>3. Array Index Out of Bound Error</h2>
+    <button onclick="arrayOutOfBound()">Run</button>
+    <div id="output3" class="output"></div>
+  </div>
+
+  <!-- Example 4: Finally Block -->
+  <div class="example">
+    <h2>4. Exception Handling with Finally Block</h2>
+    <button onclick="tryFinallyExample()">Run</button>
+    <div id="output4" class="output"></div>
+  </div>
+
+  <script>
+    // Example 1: Printing an undeclared variable
+    function undeclaredVariable() {
+      let output = document.getElementById("output1");
+      try {
+        console.log(x);  // x is not declared
+      } catch (error) {
+        output.innerHTML = "<span class='error'>" + error + "</span>";
+      }
+    }
+
+    // Example 2: Throw "divide by zero" error
+    function divideByZero(a, b) {
+      let output = document.getElementById("output2");
+      try {
+        if (b === 0) {
+          throw "Divide by Zero Error!";
+        }
+        let result = a / b;
+        output.textContent = "Result: " + result;
+      } catch (error) {
+        output.innerHTML = "<span class='error'>" + error + "</span>";
+      }
+    }
+
+    // Example 3: Throw "out of bound error"
+    function arrayOutOfBound() {
+      let output = document.getElementById("output3");
+      try {
+        let arr = [1, 2, 3];
+        if (arr[5] === undefined) {
+          throw "Out of Bound Error!";
+        }
+        output.textContent = "Value: " + arr[5];
+      } catch (error) {
+        output.innerHTML = "<span class='error'>" + error + "</span>";
+      }
+    }
+
+    // Example 4: Try-Catch-Finally
+    function tryFinallyExample() {
+      let output = document.getElementById("output4");
+      try {
+        let num = 5;
+        if (num === 5) {
+          throw "An intentional error!";
+        }
+      } catch (error) {
+        output.innerHTML = "<span class='error'>" + error + "</span>";
+      } finally {
+        output.innerHTML += "<br>Finally block executed.";
+      }
+    }
+  </script>
+</body>
+</html>
