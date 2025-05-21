@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Med Zone Clinic Patna  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+   <style>
+    body{
+        color: rgb(26, 196, 199);
+        background-color: rgb(238, 235, 231);
+    }
+    header{
+        background-color: rgb(86, 180, 79);
+        color: #fff;
+        text-align: center;
+        padding: 0.6em;
+    }
+    header:hover{
+        background-color:  rgb(12, 204, 214);
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+    nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+
+    }
+    h2 a{
+      text-decoration: none;
+      color: rgb(48, 19, 135);
+    }
+    div a{
+      text-decoration: none;
+      color: black;
+    }
+    nav ul li a:hover {
+    color: aqua;
+    font-size: 1.2rem;
+    }
+    section {
+  padding: 2em;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+    }
+    section:hover{
+        background-color: aliceblue;
+    }
+    .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+   }
+   .product{
+    padding-block: 15px 30px;
+    background-color: wheat;
+    border-radius: 15px;
+    border: 2px solid rgb(193, 193, 194);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+    
+   }
+   .product:hover{
+    background-color: rgb(22, 98, 164);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: scale(0.9);
+
+   }
+   .product img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(8, 145, 40, 0.5);
+    }
+    footer {
+  background: rgb(205, 6, 112);
+  color: #fff;
+  text-align: center;
+  padding: 0.2em;
+  height: 180px;
+    }
+    footer a{
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+    }
+    footer:hover{
+      background-color: rgb(23, 85, 156);
+    }
+    #contact{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+    }
+    /* Responsive Design
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  } */
+
+    /* Mobile Devices (up to 599px) */
+@media (max-width: 599px) {
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    gap: 0.5em;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Keeps flexibility */
+  }
+
+  .product {
+    font-size: 1rem;
+    padding-block: 12px 25px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 1.7em;
+  }
+}
+
+/* Tablets (600px to 991px) */
+@media (min-width: 600px) and (max-width: 991px) {
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8em;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ensures balanced layout */
+  }
+
+  .product {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    font-size: 15px;
+    padding: 1.8em;
+  }
+}
+
+/* Desktop / PC (992px and up) */
+@media (min-width: 992px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5em;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .product:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; /* Smooth animation */
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 2.7em;
+  }
+}
+@media (max-width: 991px) {
+  #hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(23, 38, 56);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
+  nav ul {
+    display: none !important; /* override inline flex */
+  }
+
+  nav ul.show {
+    display: flex !important;
+    flex-direction: column;
+    background-color: rgb(102, 64, 23);
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1em 0;
+    z-index: 999;
+  }
+
+  #hamburger {
+    display: block !important;
+  }
+}
+   </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center; padding: 1em; background: rgb(86, 44, 2); color: #fff;">
+      <!-- <img src="main page image/logo.png" alt="Store Logo" width="80" height="80"> -->
+      <h1>MED ZONE CLINIC PATNA</h1>
+      <!-- <img src="main page image/logo.png" alt="Store Logo" width="80" height="80"> -->
+    </div>
+  
+    <nav style="display: flex; align-items: center; justify-content: space-between; padding: 1em; background: rgb(102, 64, 23);">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.8rem; color: rgb(13, 38, 62); cursor: pointer;">
+        <i class="fa fa-bars"></i>
+      </button>      
+      <ul style="list-style: none; display: flex; justify-content: left; gap: 1em; padding: 0; margin: 0;">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="cart1.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+        <li><a href="register.php">Sign In</a></li>
+        <li><a href="user.php">Sign Out</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#wholesale">Wholesale Inquiry</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#offers">Offers</a></li>
+      </ul>
+  
+      <div class="nav-search" style="display: flex; align-items: center; gap: 0.1em; padding: 0.2em;  border-radius: 8px;">
+        <select class="search-select" style="padding: 0.2em; border-radius: 5px; border: none; width: 50px; cursor: pointer;">
+          <option>All</option>
+          <option>Home Care</option>
+          <option>Biscuit</option>
+          <option>Beverages</option>
+          <option>Misc Products</option>
+        </select>
+      
+        <input placeholder="Search Store........" class="search-input" style="padding: 0.2em; border-radius: 5px; width: 100px; border: none;">
+      
+        <button class="search-icon" aria-label="Search" style=" border-radius:5px; cursor: pointer; background-color: white;">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <script>('.search-input').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+              document.querySelector('.search-icon').click();
+            }
+          });   </script>       
+        </button>        
+      </div>
+      z
+    </nav>
+  </header>
+  
+
+  <section id="home">
+    <h2>Welcome to Our Clinic</h2>
+    <img src="main page image/web-header-2_2x.webp" alt="image" width="100%">
+    <p>Offering premium products at retail & wholesale prices.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product home-care"><a href="soap.html"><img src="main page image/P1.avif" alt="Medicine 1"><p>Daily Home Care</p></a></div>      
+      <div class="product biscuit"><a href="biscuit.html"><img src="main page image/top-biscuit-brands-in-India.webp" alt="Medicine 2"><p>Biscuit</p></a></div>
+      <div class="product beverage"><a href="beverage.html"><img src="main page image/m3.jpeg" alt="Medicine 3"><p>Beverage</a></p></div>
+      <div class="product misc-products"><a href="miscellaneous.html"><img src="main page image/mp1.avif" alt="Medicine 3"><p>Miscellaneous Products</p></a></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 style="cursor: pointer;"><a href="About.html">About Us</a></h2>
+    <p>Providing quality Service to Patients and </p>
+    
+  </section>
+
+  <section id="wholesale">
+    <h2>Wholesale Inquiry</h2>
+    <p>Contact us for child consulting.</p>
+  </section>
+
+  <footer>
+    <h2 id="contact">Contact Us</h2>
+    <a href="mailto:mdfatehalam25112002@gmail.com">SEND EMAIL <i class="fa-solid fa-envelope" style="color: #6b9419;"></i></a>
+    <br>
+    <a href="tel:+918298656012">CONTACT <i class="fa-solid fa-phone" style="color: #6b9419;"></i></a>
+    
+    <div class="l1">
+            Address:<br> Azmat colony phulwari sharif patna Bihar-851131<br>
+           <a href="https://www.google.com/maps/place/MAHTAB+GENERAL+STORE/@25.475509,86.1198781,15z/data=!4m6!3m5!1s0x39f2050d20e75bed:0x42f476d16457d190!8m2!3d25.4741362!4d86.1203892!16s%2Fg%2F11t5xl4gfc?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D">
+           <img src="main page image/Screenshot 2025-05-08 112751.png" width="15%" height="40px"></a>
+    </div>
+
+    <p>© 2025 Retail & Wholesale Hub. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
