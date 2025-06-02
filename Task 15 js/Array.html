@@ -3,47 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 15</title>
+    <title>task15</title>
+
+    <style>
+        body{
+            background-color: bisque;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(48, 69, 103);
+            border: 7px solid rgb(74, 71, 37);
+            border-radius: 9px;
+            margin: auto;
+            text-align: center;
+            padding: 5px;
+            color: wheat;
+        }
+
+        P{
+            background-color: beige;
+            text-align: center;
+        }
+    </style>
 </head>
-<body style="background-color: blueviolet;">
-    <h3>Here Are All 3 task 
-
-    </h3>
-    <P><li>1. Write a program to sort a JavaScript Array.<li><p>
-
-       <p><li>2. Write a program to concatenate two array elements and store them in new array.<li><p>
-        
-       <p><li>3. Write a program to remove first element from JavaScript Array.</li></P>
-        <h2> View page source and cheak My All Tasks there</h2>
+<body>
+    <p>QUESTION NO:01</p>
+    <div>
     <script>
+        function sortarray(){
+        let arr = [1,4,3,6,87,55]
+        document.write("original array is: ", arr)
+        
+        arr.sort(function(a,b) {return (a-b)})
+        document.write("<br>sort array is: ", arr)
+        }
+                sortarray()
+        </script>
+    </div>
 
-        // 1. Sort a JavaScript Array
-function sortArray(arr) {
-  return arr.sort((a, b) => a - b); // For numbers (ascending)
-  // For strings: return arr.sort();
-}
+    <P>QUESTION NO:02</P>
+    <div>
+        <script>
+        function concatwoarray(){
+            let x = [25,11]
+            let y = [20,10]
 
-// 2. Concatenate two arrays
-function concatArrays(arr1, arr2) {
-  return [...arr1, ...arr2]; // Using spread operator
-  // Alternative: return arr1.concat(arr2);
-}
+            let concatarray = x.concat(y);
+            document.write("1st array is: ",x)
+            document.write("<br>2nd array is: ",y)
+            document.write("<br>concat array is: ",concatarray)
+        }
+                concatwoarray()
+        </script>
+    </div>
 
-// 3. Remove first element from array
-function removeFirstElement(arr) {
-  return arr.slice(1); // Returns new array without first element
-  // Alternative: arr.shift(); return arr; (modifies original)
-}
-
-// Test cases
-const numbers = [3, 1, 4, 2];
-const fruits = ['apple', 'banana'];
-const colors = ['red', 'blue'];
-
-console.log(sortArray(numbers)); // [1, 2, 3, 4]
-console.log(concatArrays(fruits, colors)); // ['apple', 'banana', 'red', 'blue']
-console.log(removeFirstElement(fruits)); // ['banana']
+    <P>QUESTION NO:03</P>
+    <div>
+        <script>
+        function removefirstelement(){
+            let x = [ 25,11,2002,67,32]
+            let y = x.shift()
+            document.write("remove first element from array: ", y)
+            document.write("<br>after remove first element from array: ",x)
+        }
+                removefirstelement()
     </script>
-    
+    </div>
 </body>
 </html>
