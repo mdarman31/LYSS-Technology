@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task16</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        .div1{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            border: 7px solid yellow;
+            border-radius: 9px;
+            margin: auto;
+            text-align: center;
+            padding: 5px;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+         
+        .div2{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            border: 7px solid yellow;
+            border-radius: 9px;
+            margin: auto;
+            text-align: center;
+            color: wheat;
+        }
+
+        P{
+            background-color: beige;
+            text-align: center;
+        }
+
+        #datetime {
+      background-color: rgb(41, 111, 154);
+      font-size: 1.5rem;
+      color: rgb(34, 134, 154);
+      text-align: center;
+      width: 50%;
+      margin: auto;
+    }
+        
+        button{
+            display: block;
+            margin: 10px auto;
+            color: red;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <p>QUESTION NO:01</p>
+    <div class="div1">
+        <img src="OIP.jpeg" id="image">
+    </div>
+    <button onclick="changeimage()">Change Image</button>
+           <br><br>
+
+           <p>QUESTION NO:02</p>
+    <div class="div2">
+        <h5 id="p1">Change size of font after click</h5>
+    </div>
+    <button onclick="changefont()">Change Font</button>
+    <br><br>
+
+    <p>QUESTION NO:03</p>
+     <div class="div3"  id="datetime">
+        <h5>current date and time</h5>
+     </div>
+
+<br><br>
+     <p>QUESTION NO:04</p>  
+  <h2 style="text-align:center;">Basic Information Form</h2>
+
+  <form id="infoForm">
+    
+    Name:<input type="text" id="name" placeholder="Enter your name" required><br><br>
+    Email:<input type="email" id="email" placeholder="Enter your email" required><br><br>
+    Phone number:<input type="tel" id="phone" placeholder="Enter your phone number">
+    <button type="button" onclick="showInfo()">Submit</button>
+  </form>
+
+  <div id="output"></div>
+
+
+
+
+
+
+    <script>
+       function changeimage(){
+        var img = document.getElementById('image'); 
+           if(img.src.includes("OIP.jpeg")){
+            image.src = "p1.jpg";
+        }else{
+            img.src = "OIP.jpeg";
+        }
+       }
+           
+
+
+       let toggle = true;
+       function changefont(){
+        const p = document.getElementById('p1');
+            if(toggle){
+                p.style.fontSize = "1.2rem";
+            }else{
+                p.style.fontSize = "1.1rem";
+            }
+            toggle = !toggle;
+        }
+
+
+
+        function updateDateTime(){
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById("datetime").textContent = dateTimeString;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+
+
+        function showInfo() {
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+
+
+      const output = `
+        <h3>Your Submitted Info:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p> `;
+  
+      document.getElementById("output").innerHTML = output;
+    }
+       
+    </script>
+</body>
+</html>
