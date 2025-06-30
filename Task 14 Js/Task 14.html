@@ -3,17 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Task 14</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Task 14</title>
+
+    <style>
+        body{
+            background-color: bisque;
+        }
+         div{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(25, 167, 203);
+            border: 7px solid rgb(12, 171, 36);
+            border-radius: 9px;
+            margin: auto;
+            text-align: center;
+            padding: 5px;
+            color: wheat;
+        }
+
+        P{
+            background-color: beige;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h3> If you want to see My Answer Inspect the page and go to console
-        <br>
-        And Also Cheak My Code On Vs Code or Other Compiler
-    </h3>
-    <p><li>All  5 Questions  Are Solve There </li></p>
-    <br>
-    <h4>ThankYou</h4>
-    <script src="Script .js"></script>
+    <h4>If  you want to see answer then run code in vscode or online compiler because its have many question and i give user choice input so understand. </h4>
+        
+    <p>QUESTION NO:01</p>
+        <div>
+            <script>
+        function filternegativenum() {
+            let negativenum =[]
+            let nonnegativenum =[]
+
+            for(let i = 0; i<5; i++){
+            let num = prompt("Enter a number: ");
+             num = Number(num);
+        document.write("You entered: " + num + "<br>");
+    
+         if (num > 0) {
+        nonnegativenum.push(num)
+       } else if (num < 0) {
+        negativenum.push(num)
+       } else {
+        document.write("Please enter a non-zero number.");
+       }
+            }
+            document.write("<br><strong>Negative numbers:</strong> " + negativenum.join(", ") + "<br>");
+            document.write("<strong>Non-negative numbers:</strong> " + nonnegativenum.join(", ")+"<br>");
+       }
+                 filternegativenum()
+
+         </script>
+        </div>
+
+
+
+        <p>QUESTION NO:02</p>
+        <div>
+            <script>
+        function differencefrom13(){
+
+            let num = prompt("Enter a number: ");
+             num = Number(num);
+              document.write("you entered number is: ",num)
+            if(num>13){
+                result =  2*(num-13)
+            }else{
+                result = (num-13)
+            }
+            document.write("<br>your result is: ", result)
+        }
+                differencefrom13()
+         </script>
+         </div>
+
+
+
+         <p>QUESTION NO:03</p>
+         <div>
+            <script>
+        function fibonacci(){
+            let n = prompt("Enter a number: ");
+            n = Number(n);
+            let f= [0,1];
+            for (let i = 2; i <= n; i++) {
+                f.push(f[i-1]+f[i-2])
+            }
+            document.write("<br>your fibonacci series is: ", f.join(","))
+        }
+
+                fibonacci()
+        </script>
+        </div>
+
+
+
+        <p>QUESTION NO:04</p>
+        <div>
+            <script>
+        function multipleandadd(){
+             let sum = 0;
+             for(let i=0; i<=1000; i++){
+             if(i%3 == 0 && i%5 ==0){
+                sum = sum + i;
+             }
+            }
+            document.write("sum of 3 and 5 multiple under 1000: ", sum )
+        }
+
+                multipleandadd()
+         </script>
+         </div>
+
+
+
+         <p>QUESTION NO:05</p>
+         <div>
+            <script>
+        function cubenumber(){
+            let n = prompt("Enter a number");
+            n = Number(n);
+            document.write("your cube number is: ", n*n*n);
+        }
+
+                 cubenumber()
+        </script>
+        </div>
+    
 </body>
 </html>
